@@ -1,3 +1,43 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+h1 {
+  text-align: center
+}
+
+a.new {
+  display: flex;
+  justify-content: center;
+}
+
+div.title, div.body {
+  padding: 10px
+}
+
+div.body label {
+  display: block;
+  margin-bottom: 2px
+}
+
+input[type="submit"] {
+  margin-left: 10px
+}
+
+div.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.button {
+  justify-content: center;
+  display: flex;
+}
+
+
+
+
+
+
+
+
