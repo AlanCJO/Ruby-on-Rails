@@ -7,7 +7,4 @@ Rails.application.routes.draw do
 =end
   # entidades com operações CRUD são chamadas de recursos
   resources :articles # cria automaticamente as operações de CRUD
-
-
-
 end
