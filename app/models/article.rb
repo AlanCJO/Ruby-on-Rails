@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
-  # has_many :comments
+  # um artigo pode ter muitos comentários, portanto has_many
+  has_many :comments
 
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
@@ -11,7 +12,7 @@ class Article < ApplicationRecord
   validates :status, inclusion: { in: VALID_STATUSES }
 
   def archived?
-    status.eql? 'archive'
+    status == 'archive'
   end
 =end
 
