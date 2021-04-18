@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  # definindo home page
-  root "articles#index"
+  root "articles#index"  # definindo home page
 
-  # configurando minha primeira rota
-  get "/articles", to: "articles#index"
+  get "/articles", to: "articles#index"  # configurando minha primeira rota
+  get "/articles/:id", to: "articles#show" # mostrando os artigos
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
