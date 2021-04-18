@@ -24,6 +24,22 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # gera um formulário de edição com algum artigo
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  # alterando o artigo
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      rense :edit
+    end
+  end
+
   private
   def article_params
     params.require(:article).permit(:title, :body)
