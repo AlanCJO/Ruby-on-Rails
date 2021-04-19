@@ -5,5 +5,5 @@ Seguindo a aplicação do <a href="https://guides.rubyonrails.org/getting_starte
 </a>
 
 ```
-Atualmente na seção 6.1 Showing a Single Article
+Atualmente na seção 8 Refactoring
 ``` 
