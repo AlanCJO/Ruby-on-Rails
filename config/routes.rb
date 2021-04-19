@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get "/articles/:id", to: "articles#show" # mostrando os artigos
 =end
   # entidades com operações CRUD são chamadas de recursos
-  resources :articles # cria automaticamente as operações de CRUD
+  resources :articles do # cria automaticamente as operações de CRUD
+    resources :comments
+  end
 end

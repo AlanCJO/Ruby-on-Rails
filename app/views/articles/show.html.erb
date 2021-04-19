@@ -2,9 +2,51 @@
 
 <p><%= @article.body %></p>
 
+
+<h3>Comentários</h3>
+<hr>
+
+<% @article.comments.each do |comment| %>
+  <p>
+    <strong>Autor do comentário:</strong>
+    <%= comment.commenter %>
+  </p>
+  <p>
+    <strong>Comentário:</strong>
+    <%= comment.body %>
+  </p>
+  <hr>
+<% end %>
+
+<h4>Adicione um comentário:</h4>
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <p>
+    <%= form.label "Autor" %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label "mensagem" %><br>
+    <%= form.text_area :body %>
+  </p>
+  <%= form.submit "Comentar" %>
+<% end %>
+
+<h4>Admin</h4>
 <ul>
   <li><%= link_to "Editar", edit_article_path(@article) %></li>
   <li><%= link_to "Deletar", article_path(@article),
                   method: :delete,
                   data: { confirm: "Tem certeza?" } %></li>
 </ul>
+
+
+<button class="btn-back"><%= link_to "Ver Artigos", articles_path(@articles), class: "back" %></button>
+
+
+
+
+
+
+
+
+
