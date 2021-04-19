@@ -3,7 +3,3 @@
 Seguindo a aplicação do <a href="https://guides.rubyonrails.org/getting_started.html">
 `Getting Started`
 </a>
-
-```
-Atualmente na seção 8 Refactoring
-``` 
