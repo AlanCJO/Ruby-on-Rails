@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
   validates :status, inclusion: { in: VALID_STATUSES }
 
   def archived?
-    status.eql? 'archived'
+    status == 'archived'
   end
 
 end
