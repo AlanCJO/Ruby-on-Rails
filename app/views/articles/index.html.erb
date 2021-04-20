@@ -1,5 +1,7 @@
 <h1>Articles</h1>
 
+O blog tem <%= Article.public_count %> artigos públicos e contando!
+
 <ol>
   <% @articles.each do |article| %>
     <% unless article.archived? %>
