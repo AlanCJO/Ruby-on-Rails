@@ -2,35 +2,15 @@
 
 <p><%= @article.body %></p>
 
-
+<!--Exibindo os comentários do Artigo-->
 <h3>Comentários</h3>
-<hr>
+<%= render @article.comments %>
 
-<% @article.comments.each do |comment| %>
-  <p>
-    <strong>Autor do comentário:</strong>
-    <%= comment.commenter %>
-  </p>
-  <p>
-    <strong>Comentário:</strong>
-    <%= comment.body %>
-  </p>
-  <hr>
-<% end %>
-
+<!--Adicionando um novo comentário-->
 <h4>Adicione um comentário:</h4>
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
-  <p>
-    <%= form.label "Autor" %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label "mensagem" %><br>
-    <%= form.text_area :body %>
-  </p>
-  <%= form.submit "Comentar" %>
-<% end %>
+<%= render 'comments/form' %>
 
+<!--Edicão do Artigo-->
 <h4>Admin</h4>
 <ul>
   <li><%= link_to "Editar", edit_article_path(@article) %></li>
@@ -39,14 +19,6 @@
                   data: { confirm: "Tem certeza?" } %></li>
 </ul>
 
-
+<!--Voltar para os artigos-->
 <button class="btn-back"><%= link_to "Ver Artigos", articles_path(@articles), class: "back" %></button>
-
-
-
-
-
-
-
-
 

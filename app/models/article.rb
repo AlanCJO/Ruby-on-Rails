@@ -5,15 +5,12 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
 
-=begin
-  # definindo privilégios do blog
   VALID_STATUSES = %w[public private archived]
 
   validates :status, inclusion: { in: VALID_STATUSES }
 
   def archived?
-    status == 'archive'
+    status.eql? 'archived'
   end
-=end
 
 end
